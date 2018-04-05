@@ -1,37 +1,75 @@
 {
-    "name": "konjac",
-    "displayName": "konjac",
-    "description": "",
-    "version": "0.0.1",
-    "publisher": "wata",
-    "engines": {
-        "vscode": "^1.21.0"
+  "name": "konjac",
+  "displayName": "Konjac - Translate Text",
+  "description": "VSCode extension for Google Translate",
+  "version": "0.1.0",
+  "publisher": "wata",
+  "galleryBanner": {
+    "color": "#439FE2",
+    "theme": "light"
+  },
+  "homepage": "https://marketplace.visualstudio.com/items?itemName=wata.konjac",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wata/vscode-konjac.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wata/vscode-konjac/issues"
+  },
+  "engines": {
+    "vscode": "^1.21.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:konjac.translate"
+  ],
+  "icon": "icon.png",
+  "main": "./out/extension",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Konjac configuration",
+      "properties": {
+        "konjac.apiUrl": {
+          "type": "string",
+          "default": "",
+          "description": "Type your konjac-api URL."
+        },
+        "konjac.target": {
+          "type": "string",
+          "default": "en",
+          "description": "Type your target language."
+        }
+      }
     },
-    "categories": [
-        "Other"
-    ],
-    "activationEvents": [
-        "onCommand:extension.sayHello"
-    ],
-    "main": "./out/extension",
-    "contributes": {
-        "commands": [{
-            "command": "extension.sayHello",
-            "title": "Hello World"
-        }]
-    },
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.6",
-        "tslint": "^5.8.0",
-        "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
-    }
+    "commands": [
+      {
+        "command": "konjac.translate",
+        "title": "Translate This",
+        "category": "Konjac"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.6",
+    "tslint": "^5.8.0",
+    "@types/node": "^7.0.43",
+    "@types/mocha": "^2.2.42"
+  },
+  "dependencies": {
+    "encodeurl": "^1.0.2",
+    "request": "^2.85.0",
+    "request-promise-native": "^1.0.5"
+  }
 }

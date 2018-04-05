@@ -1,29 +1,52 @@
 'use strict';
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
+
 import * as vscode from 'vscode';
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+const rp = require('request-promise-native');
+const encodeUrl = require('encodeurl');
+
 export function activate(context: vscode.ExtensionContext) {
+    let disposable = vscode.commands.registerCommand('konjac.translate', () => {
+        let apiUrl = vscode.workspace.getConfiguration('konjac')['apiUrl'];
+        if (!apiUrl) {
+			vscode.window.showErrorMessage('Go to user settings and edit "konjac.apiUrl".');
+			return;
+        }
+        let target = vscode.workspace.getConfiguration('konjac')['target'];
+        if (!target) {
+			vscode.window.showErrorMessage('Go to user settings and edit "konjac.target".');
+			return;
+        }
 
-    // Use the console to output diagnostic information (console.log) and errors (console.error)
-    // This line of code will only be executed once when your extension is activated
-    console.log('Congratulations, your extension "konjac" is now active!');
+        let editor = vscode.window.activeTextEditor;
+        if (!editor) {
+            vscode.window.showErrorMessage('Must select text to translate');
+            return;
+        }
+        let text = editor.document.getText(editor.selection).trim();
+        if (text === '') {
+            vscode.window.showErrorMessage('Must select text to translate');
+            return;
+        }
 
-    // The command has been defined in the package.json file
-    // Now provide the implementation of the command with  registerCommand
-    // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand('extension.sayHello', () => {
-        // The code you place here will be executed every time your command is executed
-
-        // Display a message box to the user
-        vscode.window.showInformationMessage('Hello World!');
+        vscode.window.setStatusBarMessage('Translating...', rp({
+            uri: encodeUrl(apiUrl),
+            method: 'POST',
+            json: true,
+            followAllRedirects: true,
+            formData: {
+                text: text,
+                target: target
+            }
+        }).then((body: any) => {
+            // Google Apps Script always returns 200
+            if (!body.data) {
+                vscode.window.showErrorMessage(`Error: ${body.message}`);
+            }
+            vscode.window.showInformationMessage(`${body.data.translatedText}`);
+        }).catch((err: Error) => {
+            vscode.window.showErrorMessage(`Error: ${err.message}`);
+        }));
     });
-
     context.subscriptions.push(disposable);
-}
-
-// this method is called when your extension is deactivated
-export function deactivate() {
 }
