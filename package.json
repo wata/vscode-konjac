@@ -24,7 +24,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:konjac.translate"
+    "*"
   ],
   "icon": "icon.png",
   "main": "./out/extension",
@@ -47,11 +47,33 @@
     },
     "commands": [
       {
+        "command": "konjac.configure",
+        "title": "Select Target Language",
+        "category": "Konjac"
+      },
+      {
         "command": "konjac.translate",
         "title": "Translate This",
         "category": "Konjac"
+      },
+      {
+        "command": "konjac.replace",
+        "title": "Translate This and Replace",
+        "category": "Konjac"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorHasSelection",
+          "command": "konjac.translate"
+        },
+        {
+          "when": "editorHasSelection",
+          "command": "konjac.replace"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -61,11 +83,11 @@
     "test": "npm run compile && node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
-    "typescript": "^2.6.1",
-    "vscode": "^1.1.6",
-    "tslint": "^5.8.0",
-    "@types/node": "^7.0.43",
-    "@types/mocha": "^2.2.42"
+    "typescript": "^2.8.3",
+    "vscode": "^1.1.14",
+    "tslint": "^5.9.1",
+    "@types/node": "^9.6.6",
+    "@types/mocha": "^5.2.0"
   },
   "dependencies": {
     "encodeurl": "^1.0.2",
