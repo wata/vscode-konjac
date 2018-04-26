@@ -6,17 +6,25 @@
 
 VSCode extension for Google Translate
 
+## ⚠️ Requirements
+
+This extension using [konjac-api](https://github.com/wata/apps-script-konjac-api).
+
+You can install it from [**here**](https://wata.github.io/konjac-farm/).
+
 ## Features
 
 - Translate This
 
 ![feature translate](images/feature-translate.gif)
 
-## ⚠️ Requirements
+- Translate This and Replace
 
-This extension using [konjac-api](https://github.com/wata/apps-script-konjac-api).
+![feature replace](images/feature-replace.gif)
 
-You can install it from [**here**](https://wata.github.io/konjac-farm/).
+- Select the language to use for translation
+
+![feature configure](images/feature-configure.gif)
 
 ## Extension Settings
 
@@ -26,6 +34,12 @@ This extension contributes the following settings:
 - `konjac.target`: default target language
 
 ## Release Notes
+
+### 0.2.3
+
+- Add command "Translate This and Replace"
+- Add command "Select Target Language"
+- Add commands to the editor context menu
 
 ### 0.1.0
 
