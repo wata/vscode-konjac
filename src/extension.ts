@@ -157,10 +157,11 @@ class Konjac {
         if (!text) { return; }
         const editor = vscode.window.activeTextEditor;
         if (!editor) { return; }
+        const selection = editor.selection;
 
         vscode.window.setStatusBarMessage('$(clock) Translating...', this.fetch(text).then((result: string) => {
             editor.edit(editBuilder => {
-                editBuilder.replace(editor.selection, result);
+                editBuilder.replace(selection, result);
             });
         }).catch((error: Error) => {
 			vscode.window.showErrorMessage(error.message);
