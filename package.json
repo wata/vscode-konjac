@@ -2,7 +2,7 @@
   "name": "konjac",
   "displayName": "Konjac - Translate Text",
   "description": "VSCode extension for Google Translate",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "publisher": "wata",
   "galleryBanner": {
     "color": "#439FE2",
@@ -83,15 +83,15 @@
     "test": "npm run compile && node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
-    "typescript": "^2.8.3",
-    "vscode": "^1.1.14",
-    "tslint": "^5.9.1",
-    "@types/node": "^9.6.6",
-    "@types/mocha": "^5.2.0"
+    "typescript": "^3.1.1",
+    "vscode": "^1.1.21",
+    "tslint": "^5.11.0",
+    "@types/node": "^10.11.4",
+    "@types/mocha": "^5.2.5"
   },
   "dependencies": {
     "encodeurl": "^1.0.2",
-    "request": "^2.85.0",
+    "request": "^2.88.0",
     "request-promise-native": "^1.0.5"
   }
 }

@@ -1,14 +1,17 @@
-# vscode-konjac
+<p align="center"><img src="https://raw.githubusercontent.com/wata/vscode-konjac/master/icon.png" width="128"></p>
+<h1 align="center">vscode-konjac</h1>
+<h2 align="center">VSCode extension for Google Translate.</h2>
+<p align="center">
+<a href="https://marketplace.visualstudio.com/items?itemName=wata.konjac"><img src="https://vsmarketplacebadge.apphb.com/version/wata.konjac.svg" alt="Current Version"></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=wata.konjac"><img src="https://vsmarketplacebadge.apphb.com/installs/wata.konjac.svg" alt="Install Count"></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=wata.konjac"><img src="https://vsmarketplacebadge.apphb.com/rating/wata.konjac.svg" alt="Open Issues"></a>
+</p>
 
-[![Current Version](https://vsmarketplacebadge.apphb.com/version/wata.konjac.svg)](https://marketplace.visualstudio.com/items?itemName=wata.konjac)
-[![Install Count](https://vsmarketplacebadge.apphb.com/installs/wata.konjac.svg)](https://marketplace.visualstudio.com/items?itemName=wata.konjac)
-[![Open Issues](https://vsmarketplacebadge.apphb.com/rating/wata.konjac.svg)](https://marketplace.visualstudio.com/items?itemName=wata.konjac)
-
-VSCode extension for Google Translate
+Google Cloud Translation API is a paid service. However, this extension is free because it uses [Google Apps Script](https://medium.com/@nagasawa/google-apps-script-%E3%81%A7%E4%BD%9C%E3%81%A3%E3%81%9F%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%82%92-apps-script-api-%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E9%85%8D%E5%B8%83%E3%81%99%E3%82%8B-aa6daf6ae642).
 
 ## ⚠️ Requirements
 
-This extension using [konjac-api](https://github.com/wata/apps-script-konjac-api).
+This extension requires konjac-api.
 
 You can install it from [**here**](https://wata.github.io/konjac-farm/).
 
@@ -34,6 +37,10 @@ This extension contributes the following settings:
 - `konjac.target`: default target language
 
 ## Release Notes
+
+### 0.2.4
+
+- replace original position if the cursor moves during translation
 
 ### 0.2.3
 

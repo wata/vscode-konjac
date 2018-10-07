@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to the "konjac" extension will be documented in this file.
 
+## [0.2.4]
+- replace original position if the cursor moves during translation
+
 ## [0.2.3]
 - Add command "Translate This and Replace"
 - Add command "Select Target Language"
