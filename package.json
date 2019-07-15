@@ -2,7 +2,7 @@
   "name": "konjac",
   "displayName": "Konjac - Translate Text",
   "description": "VSCode extension for Google Translate",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "publisher": "wata",
   "galleryBanner": {
     "color": "#439FE2",
