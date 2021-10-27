@@ -25,6 +25,8 @@ You can install it from [**here**](https://wata.github.io/konjac-farm/).
 
 ![feature replace](images/feature-replace.gif)
 
+- Translate This and Set clipboard
+
 - Select the language to use for translation
 
 ![feature configure](images/feature-configure.gif)
@@ -38,9 +40,13 @@ This extension contributes the following settings:
 
 ## Release Notes
 
+### 0.3.0
+
+- add setclipbord function [#9](https://github.com/wata/vscode-konjac/pull/9) - Thanks [@ShortArrow](https://github.com/ShortArrow)
+
 ### 0.2.4
 
-- replace original position if the cursor moves during translation
+- replace original position if the cursor moves during translation [#1](https://github.com/wata/vscode-konjac/pull/1) - Thanks [@nazoking](https://github.com/nazoking)
 
 ### 0.2.3
 
