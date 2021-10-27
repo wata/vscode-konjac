@@ -60,6 +60,11 @@
         "command": "konjac.replace",
         "title": "Translate This and Replace",
         "category": "Konjac"
+      },
+      {
+        "command": "konjac.setclipboard",
+        "title": "Translate This and Set clipboard",
+        "category": "Konjac"
       }
     ],
     "menus": {
@@ -71,6 +76,10 @@
         {
           "when": "editorHasSelection",
           "command": "konjac.replace"
+        },
+        {
+          "when": "editorHasSelection",
+          "command": "konjac.setclipboard"
         }
       ]
     }
@@ -83,11 +92,11 @@
     "test": "npm run compile && node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
-    "typescript": "^3.5.3",
-    "vscode": "^1.1.35",
-    "tslint": "^5.18.0",
+    "@types/mocha": "^5.2.7",
     "@types/node": "^12.6.2",
-    "@types/mocha": "^5.2.7"
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3",
+    "vscode": "^1.1.37"
   },
   "dependencies": {
     "encodeurl": "^1.0.2",

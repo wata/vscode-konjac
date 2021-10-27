@@ -10,6 +10,7 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(konjac);
     context.subscriptions.push(vscode.commands.registerCommand('konjac.translate', () => konjac.translate()));
     context.subscriptions.push(vscode.commands.registerCommand('konjac.replace', () => konjac.replace()));
+    context.subscriptions.push(vscode.commands.registerCommand('konjac.setclipboard', () => konjac.setclipboard()));
     context.subscriptions.push(vscode.commands.registerCommand('konjac.configure', () => konjac.configure()));
 }
 
@@ -163,6 +164,17 @@ class Konjac {
             editor.edit(editBuilder => {
                 editBuilder.replace(selection, result);
             });
+        }).catch((error: Error) => {
+			vscode.window.showErrorMessage(error.message);
+        }));
+    }
+
+    public setclipboard() {
+        const text = this.getSelectedText();
+        if (!text) { return; }
+
+        vscode.window.setStatusBarMessage('$(clock) Translating...', this.fetch(text).then( async (result: string) => {
+            await vscode.env.clipboard.writeText(result);
         }).catch((error: Error) => {
 			vscode.window.showErrorMessage(error.message);
         }));
