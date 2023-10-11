@@ -31,6 +31,8 @@ You can install it from [**here**](https://wata.github.io/konjac-farm/).
 
 ![feature configure](images/feature-configure.gif)
 
+- This extension also functions as a translation source for the [Comment Translate extension](https://marketplace.visualstudio.com/items?itemName=intellsmi.comment-translate) .
+
 ## Extension Settings
 
 This extension contributes the following settings:
