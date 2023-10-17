@@ -1,9 +1,9 @@
 'use strict';
 
 import * as vscode from 'vscode';
-
-const rp = require('request-promise-native');
-const encodeUrl = require('encodeurl');
+import type { ITranslateRegistry } from 'comment-translate-manager';
+import { KonjacTranslate } from './KonjacTranslate';
+import { konjacFetch } from './konjacFetch';
 
 export function activate(context: vscode.ExtensionContext) {
     const konjac = new Konjac();
@@ -12,6 +12,12 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(vscode.commands.registerCommand('konjac.replace', () => konjac.replace()));
     context.subscriptions.push(vscode.commands.registerCommand('konjac.setclipboard', () => konjac.setclipboard()));
     context.subscriptions.push(vscode.commands.registerCommand('konjac.configure', () => konjac.configure()));
+    return {
+        //Expose the plug-in for comment-translate-manager
+        extendTranslate: (registry: ITranslateRegistry) => {
+            registry('konjac', KonjacTranslate);
+        }
+    };
 }
 
 class Konjac {
@@ -203,22 +209,11 @@ class Konjac {
         if (!target) {
 			return Promise.reject(new Error('Go to user settings and edit "konjac.target".'));
         }
-        const opts: any = {
-            uri: encodeUrl(apiUrl),
-            method: 'POST',
-            json: true,
-            followAllRedirects: true,
-            formData: { text: text, target: target },
-            transform2xxOnly: true,
-            transform: function (body: any) {
-                // Google Apps Script Execution API always returns 200
-                if (!body.data) {
-                    throw new Error(body.message);
-                }
-                return body.data.translatedText;
-            }
-        };
-        return rp(opts);
+        return konjacFetch({
+            apiUrl,
+            text,
+            target,
+        });
     }
 
     dispose() {
