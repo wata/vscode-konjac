@@ -2,7 +2,7 @@
   "name": "konjac",
   "displayName": "Konjac - Translate Text",
   "description": "VSCode extension for Google Translate",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "publisher": "wata",
   "galleryBanner": {
     "color": "#439FE2",
@@ -18,7 +18,7 @@
     "url": "https://github.com/wata/vscode-konjac/issues"
   },
   "engines": {
-    "vscode": "^1.61.0"
+    "vscode": "^1.83.0"
   },
   "categories": [
     "Other"
@@ -105,18 +105,18 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.61.0",
-    "@types/glob": "^7.2.0",
-    "@types/mocha": "^9.0.0",
-    "@types/node": "16.x",
-    "@typescript-eslint/eslint-plugin": "^5.2.0",
-    "@typescript-eslint/parser": "^5.2.0",
+    "@types/vscode": "^1.83.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.2",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
     "comment-translate-manager": "^0.0.5",
-    "eslint": "^8.1.0",
-    "glob": "^7.2.0",
-    "mocha": "^9.2.2",
-    "typescript": "^4.4.4",
-    "@vscode/test-electron": "^1.6.2"
+    "eslint": "^8.51.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2",
+    "@vscode/test-electron": "^2.3.5"
   },
   "dependencies": {
     "encodeurl": "^1.0.2",

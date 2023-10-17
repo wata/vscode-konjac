@@ -2,9 +2,9 @@
 <h1 align="center">vscode-konjac</h1>
 <h2 align="center">VSCode extension for Google Translate.</h2>
 <p align="center">
-<a href="https://marketplace.visualstudio.com/items?itemName=wata.konjac"><img src="https://vsmarketplacebadge.apphb.com/version/wata.konjac.svg" alt="Current Version"></a>
-<a href="https://marketplace.visualstudio.com/items?itemName=wata.konjac"><img src="https://vsmarketplacebadge.apphb.com/installs/wata.konjac.svg" alt="Install Count"></a>
-<a href="https://marketplace.visualstudio.com/items?itemName=wata.konjac"><img src="https://vsmarketplacebadge.apphb.com/rating/wata.konjac.svg" alt="Open Issues"></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=wata.konjac" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/wata.konjac?color=blue&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version"></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=wata.konjac" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/d/wata.konjac?color=4bdbe3" alt="Visual Studio Marketplace Downloads"></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=wata.konjac" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/i/wata.konjac?color=63ba83" alt="Visual Studio Marketplace Installs"></a>
 </p>
 
 Google Cloud Translation API is a paid service. However, this extension is free because it uses [Google Apps Script](https://medium.com/@nagasawa/google-apps-script-%E3%81%A7%E4%BD%9C%E3%81%A3%E3%81%9F%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%82%92-apps-script-api-%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E9%85%8D%E5%B8%83%E3%81%99%E3%82%8B-aa6daf6ae642).
@@ -41,6 +41,10 @@ This extension contributes the following settings:
 - `konjac.target`: default target language
 
 ## Release Notes
+
+### 0.4.0
+
+- support vscode-comment-translate [#17](https://github.com/wata/vscode-konjac/pull/17) - Thanks [@nazoking](https://github.com/nazoking)
 
 ### 0.3.0
 

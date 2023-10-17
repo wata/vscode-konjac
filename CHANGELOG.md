@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to the "konjac" extension will be documented in this file.
 
+## [0.4.0]
+
+- support vscode-comment-translate [#17](https://github.com/wata/vscode-konjac/pull/17) - Thanks [@nazoking](https://github.com/nazoking)
+
 ## [0.3.0]
 - add setclipbord function [#9](https://github.com/wata/vscode-konjac/pull/9) - Thanks [@ShortArrow](https://github.com/ShortArrow)
 
