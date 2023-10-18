@@ -1,6 +1,6 @@
 <p align="center"><img src="https://raw.githubusercontent.com/wata/vscode-konjac/master/icon.png" width="128"></p>
 <h1 align="center">vscode-konjac</h1>
-<h2 align="center">VSCode extension for Google Translate.</h2>
+<h2 align="center">VSCode extension for Google Translate</h2>
 <p align="center">
 <a href="https://marketplace.visualstudio.com/items?itemName=wata.konjac" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/wata.konjac?color=blue&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version"></a>
 <a href="https://marketplace.visualstudio.com/items?itemName=wata.konjac" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/d/wata.konjac?color=4bdbe3" alt="Visual Studio Marketplace Downloads"></a>
@@ -19,19 +19,19 @@ You can install it from [**here**](https://wata.github.io/konjac-farm/).
 
 - Translate This
 
-![feature translate](images/feature-translate.gif)
+    ![feature translate](images/feature-translate.gif)
 
 - Translate This and Replace
 
-![feature replace](images/feature-replace.gif)
+    ![feature replace](images/feature-replace.gif)
 
 - Translate This and Set clipboard
 
 - Select the language to use for translation
 
-![feature configure](images/feature-configure.gif)
+    ![feature configure](images/feature-configure.gif)
 
-- This extension also functions as a translation source for the [Comment Translate extension](https://marketplace.visualstudio.com/items?itemName=intellsmi.comment-translate) .
+- This extension also functions as a translation source for the [Comment Translate extension](https://marketplace.visualstudio.com/items?itemName=intellsmi.comment-translate)
 
 ## Extension Settings
 
